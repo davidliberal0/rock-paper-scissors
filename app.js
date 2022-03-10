@@ -1,3 +1,21 @@
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    console.log("Tie");
+  } else if (playerSelection === "rock" && computerSelection === "scissors") {
+    console.log("You win! Rock destroys scissors.");
+  } else if (playerSelection === "paper" && computerSelection === "rock") {
+    console.log("You win! Paper covers rock.");
+  } else if (playerSelection === "scissors" && computerSelection === "paper") {
+    console.log("You win! Scissors cut paper.");
+  } else if (playerSelection === "paper" && computerSelection === "scissors") {
+    console.log("You lose! Scissors cut paper.");
+  } else if (playerSelection === "rock" && computerSelection === "paper") {
+    console.log("You lose! Paper covers rock");
+  } else {
+    console.log("You Lose! Rock destroys scissors.");
+  }
+}
+
 // Play Choices Array
 const playChoice = ["Rock", "Paper", "Scissors"];
 
