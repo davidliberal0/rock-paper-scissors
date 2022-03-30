@@ -1,0 +1,39 @@
+body {
+  background-color: #ecfeaa;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #626267;
+}
+
+button {
+  background-color: #86836d;
+  color: white;
+  height: 50px;
+  width: 70px;
+  border-radius: 10px;
+}
+
+.player-container {
+  background-color: #86836d;
+}
+
+.players {
+  display: flex;
+  flex-direction: row;
+}
+
+.computer-score {
+  text-align: center;
+}
+
+.human-score {
+  text-align: center;
+}
