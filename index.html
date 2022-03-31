@@ -20,24 +20,28 @@
       <h1>Rock Paper Scissors!</h1>
       <h3>First to 5 Wins!</h3>
       <section class="players">
-        <div>
-          <h2>Human</h2>
-          <div class="player-container">
+        <div class="player-container">
+          <h2 class="player-heading">Human</h2>
+          <div class="button-selection">
             <button>Rock</button>
             <button>Paper</button>
             <button>Scissors</button>
-            <h2 class="human-score">0</h2>
+          </div>
+          <div class="score">
+            <h3>Score:</h3>
+            <h2 id="human-score">0</h2>
           </div>
         </div>
-        <div>
-          <h2>Computer</h2>
-          <div>
-            <div class="player-container">
-              <button>Rock</button>
-              <button>Paper</button>
-              <button>Scissors</button>
-              <h2 class="computer-score">0</h2>
-            </div>
+        <div class="player-container">
+          <h2 class="player-heading">Computer</h2>
+          <div class="button-selection">
+            <button>Rock</button>
+            <button>Paper</button>
+            <button>Scissors</button>
+          </div>
+          <div class="score">
+            <h3>Score:</h3>
+            <h2 id="computer-score">0</h2>
           </div>
         </div>
       </section>
