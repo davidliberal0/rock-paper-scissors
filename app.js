@@ -38,18 +38,22 @@ function computerPlay() {
 // stores the randomized commputer's play selection
 // let computerSelection = computerPlay();
 
-// Function for player
-function playerPlay() {
-  let play = prompt(
-    "Please select a choice: Rock, Paper or Scissors.."
-  ).toLowerCase();
+// Select all human buttons
+const humanButtons = document.querySelectorAll(".button-selector-human");
 
-  if (play === "rock") {
-    return playChoice[0];
-  } else if (play === "paper") {
-    return playChoice[1];
-  } else {
-    return playChoice[2];
+// Function for player
+function playerPlay(humanButtons) {
+  // Gives all human buttons functions
+  for (let humanButton of humanButtons) {
+    humanButton.addEventListener("click", () => {
+      if (humanButton.innerText == "rock") {
+        return playChoice[0].toLowerCase;
+      } else if (humanButton.innerText === "paper") {
+        return playChoice[1].toLowerCase;
+      } else {
+        return playChoice[2].toLowerCase;
+      }
+    });
   }
 }
 
