@@ -64,7 +64,13 @@ button {
   text-align: center;
 }
 
-.button-selection {
+.button-selection-human {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-selection-computer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,6 +90,11 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.button-selection-human button:hover {
+  background: #4e5e9e;
+  border: none;
 }
 
 @media (max-width: 1036px) {
