@@ -38,37 +38,63 @@ function computerPlay() {
 // stores the randomized commputer's play selection
 // let computerSelection = computerPlay();
 
+// ----------------------------------------------
 // Select all human buttons
-const humanButtons = document.querySelectorAll(".button-selector-human");
+const humanButtons = document.querySelectorAll(".button-selector");
 
 // Function for player
-function playerPlay(humanButtons) {
+function playerPlay() {
   // Gives all human buttons functions
   for (let humanButton of humanButtons) {
     humanButton.addEventListener("click", () => {
-      if (humanButton.innerText == "rock") {
-        return playChoice[0].toLowerCase;
+      if (humanButton.innerText === "rock") {
+        return playChoice[0];
       } else if (humanButton.innerText === "paper") {
-        return playChoice[1].toLowerCase;
+        return playChoice[1];
       } else {
-        return playChoice[2].toLowerCase;
+        return playChoice[2];
       }
     });
   }
 }
+
+// -------------------------------------
+
+const computerButtons = document.querySelectorAll(".computer-choice");
+
+function OnScrnComputerButton() {
+  let computerSelection = computerPlay().toLowerCase();
+
+  for (let computerButton of computerButtons) {
+    if (computerButton.innerText === computerSelection) {
+      computerButton.style.backgroundColor = "#4e5e9e";
+      computerButton.style.boxShadow =
+        "rgba(rgba(255, 225, 255, 0.56) 0px 22px 70px 4px";
+    } else if (computerButton.innerText === computerSelection) {
+      computerButton.style.backgroundColor = "#4e5e9e";
+      computerButton.style.boxShadow =
+        "rgba(rgba(255, 225, 255, 0.56) 0px 22px 70px 4px";
+    } else {
+      computerButton.style.backgroundColor = "#4e5e9e";
+      computerButton.style.boxShadow =
+        "rgba(rgba(255, 225, 255, 0.56) 0px 22px 70px 4px";
+    }
+  }
+}
+
+// --------------------------------
 
 // let playerSelection = playerPlay();
 
 function game() {
   // Controls the amount of rounds for the game
   for (let i = 0; i < 5; i++) {
-    let playerSelection = playerPlay().toLowerCase();
-    console.log(`Player: ${playerSelection}`);
-    let computerSelection = computerPlay().toLowerCase();
-    console.log(`Computer: ${computerSelection}`);
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(`Round You:${playerScore} || Computer ${computerScore}`);
-    console.log("------------------------------------------------------");
+    let playerSelection = playerPlay();
+    let computerSelection = computerPlay();
+    OnScrnComputerButton();
+    playRound(playerSelection, computerSelection);
+    document.querySelector("#computer-score").innerText = `${computerScore}`;
+    document.querySelector("#human-score").innerText = `${playerScore}`;
   }
 }
 

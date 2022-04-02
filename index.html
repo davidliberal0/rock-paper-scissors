@@ -12,7 +12,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/style.css" />
-    <script src="./app.js"></script>
   </head>
   <body>
     <!-- Buttons for Selection -->
@@ -23,9 +22,9 @@
         <div class="player-container">
           <h2 class="player-heading">Human</h2>
           <div class="button-selection-human">
-            <button>Rock</button>
-            <button>Paper</button>
-            <button>Scissors</button>
+            <button class="button-selector">Rock</button>
+            <button class="button-selector">Paper</button>
+            <button class="button-selector">Scissors</button>
           </div>
           <div class="score">
             <h3>Score:</h3>
@@ -35,9 +34,9 @@
         <div class="player-container">
           <h2 class="player-heading">Computer</h2>
           <div class="button-selection-computer">
-            <button>Rock</button>
-            <button>Paper</button>
-            <button>Scissors</button>
+            <button class="computer-choice">Rock</button>
+            <button class="computer-choice">Paper</button>
+            <button class="computer-choice">Scissors</button>
           </div>
           <div class="score">
             <h3>Score:</h3>
@@ -47,5 +46,6 @@
       </section>
       <h1 id="winning-message"></h1>
     </div>
+    <script src="./app.js"></script>
   </body>
 </html>
