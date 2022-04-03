@@ -19,33 +19,33 @@ const computerButtons = document.querySelectorAll(".computer-choice");
 const humanButtons = document.querySelectorAll(".button-selector");
 const winMessage = document.querySelector("#winning-message");
 
-function playGame() {
-  if (!gameOver) {
-    gameAction();
-  }
-}
-
 function gameAction() {
   for (let humanButton of humanButtons) {
     humanButton.addEventListener("click", () => {
       if (humanButton.innerText.toLowerCase() === "rock") {
-        let playerSelection = humanButton.innerText.toLowerCase();
-        let computerSelection = computerPlay().toLowerCase();
-        playRound(playerSelection, computerSelection);
-        displayScores();
-        fiveRounds();
+        if (playerScore != 5 && computerScore != 5) {
+          let playerSelection = humanButton.innerText.toLowerCase();
+          let computerSelection = computerPlay().toLowerCase();
+          playRound(playerSelection, computerSelection);
+          displayScores();
+          fiveRounds();
+        }
       } else if (humanButton.innerText.toLowerCase() === "paper") {
-        let playerSelection = humanButton.innerText.toLowerCase();
-        let computerSelection = computerPlay().toLowerCase();
-        playRound(playerSelection, computerSelection);
-        displayScores();
-        fiveRounds();
+        if (playerScore != 5 && computerScore != 5) {
+          let playerSelection = humanButton.innerText.toLowerCase();
+          let computerSelection = computerPlay().toLowerCase();
+          playRound(playerSelection, computerSelection);
+          displayScores();
+          fiveRounds();
+        }
       } else {
-        let playerSelection = humanButton.innerText.toLowerCase();
-        let computerSelection = computerPlay().toLowerCase();
-        playRound(playerSelection, computerSelection);
-        displayScores();
-        fiveRounds();
+        if (playerScore != 5 && computerScore != 5) {
+          let playerSelection = humanButton.innerText.toLowerCase();
+          let computerSelection = computerPlay().toLowerCase();
+          playRound(playerSelection, computerSelection);
+          displayScores();
+          fiveRounds();
+        }
       }
     });
   }
@@ -86,21 +86,13 @@ resetButton.addEventListener("click", () => {
   cpuScore.innerText = `${computerScore}`;
 });
 
-// function fiveRounds() {
-//   if (playerScore == 5) {
-//     winMessage.innerText = "You Win!";
-//     for (let humanButton of humanButtons) {
-//       humanButton.removeEventListener("click", coolFunction, true);
-//     }
-//     gameOver = true;
-//   } else if (computerScore == 5) {
-//     winMessage.innerText = "Computer Wins!";
-//     for (let humanButton of humanButtons) {
-//       humanButton.removeEventListener("click", coolFunction, true);
-//     }
-//     gameOver = true;
-//   }
-// }
+function fiveRounds() {
+  if (playerScore == 5) {
+    winMessage.innerText = "You Win!";
+  } else if (computerScore == 5) {
+    winMessage.innerText = "Computer Wins!";
+  }
+}
 
 const humanScore = document.querySelector("#human-score");
 const cpuScore = document.querySelector("#computer-score");
@@ -110,4 +102,4 @@ function displayScores() {
   cpuScore.innerText = `${computerScore}`;
 }
 
-playGame();
+gameAction();
