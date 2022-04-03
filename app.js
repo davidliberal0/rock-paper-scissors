@@ -15,27 +15,6 @@ function computerPlay() {
 // Selects all computer buttons
 const computerButtons = document.querySelectorAll(".computer-choice");
 
-// // Displays a shadow behind button of the computer's selected choice
-// function OnScrnComputerButton(computerSelection) {
-//   // let computerSelection = computerPlay().toLowerCase();
-
-//   for (let computerButton of computerButtons) {
-//     if (computerButton.innerText.toLowerCase() === computerSelection) {
-//       computerButton.style.backgroundColor = "#4e5e9e";
-//       computerButton.style.boxShadow =
-//         "rgba(rgba(255, 225, 255, 0.56) 0px 22px 70px 4px";
-//     } else if (computerButton.innerText.toLowerCase() === computerSelection) {
-//       computerButton.style.backgroundColor = "#4e5e9e";
-//       computerButton.style.boxShadow =
-//         "rgba(rgba(255, 225, 255, 0.56) 0px 22px 70px 4px";
-//     } else {
-//       computerButton.style.backgroundColor = "#4e5e9e";
-//       computerButton.style.boxShadow =
-//         "rgba(rgba(255, 225, 255, 0.56) 0px 22px 70px 4px";
-//     }
-//   }
-// }
-
 // Select all human buttons
 const humanButtons = document.querySelectorAll(".button-selector");
 const winMessage = document.querySelector("#winning-message");
@@ -107,17 +86,21 @@ resetButton.addEventListener("click", () => {
   cpuScore.innerText = `${computerScore}`;
 });
 
-function fiveRounds() {
-  if (playerScore == 5) {
-    winMessage.innerText = "You Win!";
-    gameOver = true;
-  }
-
-  if (computerScore == 5) {
-    winMessage.innerText = "Computer Wins!";
-    gameOver = true;
-  }
-}
+// function fiveRounds() {
+//   if (playerScore == 5) {
+//     winMessage.innerText = "You Win!";
+//     for (let humanButton of humanButtons) {
+//       humanButton.removeEventListener("click", coolFunction, true);
+//     }
+//     gameOver = true;
+//   } else if (computerScore == 5) {
+//     winMessage.innerText = "Computer Wins!";
+//     for (let humanButton of humanButtons) {
+//       humanButton.removeEventListener("click", coolFunction, true);
+//     }
+//     gameOver = true;
+//   }
+// }
 
 const humanScore = document.querySelector("#human-score");
 const cpuScore = document.querySelector("#computer-score");
