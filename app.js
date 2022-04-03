@@ -1,5 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
+let rounds = 0;
+let gameOver = false;
 
 // Play Choices Array
 const playChoice = ["Rock", "Paper", "Scissors"];
@@ -39,6 +41,12 @@ const humanButtons = document.querySelectorAll(".button-selector");
 const winMessage = document.querySelector("#winning-message");
 
 function playGame() {
+  if (!gameOver) {
+    gameAction();
+  }
+}
+
+function gameAction() {
   for (let humanButton of humanButtons) {
     humanButton.addEventListener("click", () => {
       if (humanButton.innerText.toLowerCase() === "rock") {
@@ -46,24 +54,21 @@ function playGame() {
         let computerSelection = computerPlay().toLowerCase();
         playRound(playerSelection, computerSelection);
         displayScores();
+        fiveRounds();
       } else if (humanButton.innerText.toLowerCase() === "paper") {
         let playerSelection = humanButton.innerText.toLowerCase();
         let computerSelection = computerPlay().toLowerCase();
         playRound(playerSelection, computerSelection);
         displayScores();
+        fiveRounds();
       } else {
         let playerSelection = humanButton.innerText.toLowerCase();
         let computerSelection = computerPlay().toLowerCase();
         playRound(playerSelection, computerSelection);
         displayScores();
+        fiveRounds();
       }
     });
-  }
-
-  if (playerScore == 5) {
-    winMessage.innerText = innerText = "You Win";
-  } else {
-    winMessage.innerText = "Computer Wins";
   }
 }
 
@@ -88,6 +93,29 @@ function playRound(playerSelection, computerSelection) {
   } else {
     winMessage.innerText = "You Lose! Rock destroys scissors.";
     return (computerScore += 1);
+  }
+}
+
+const resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener("click", () => {
+  playerScore = 0;
+  computerScore = 0;
+  winMessage.innerText = "";
+  gameOver = false;
+  humanScore.innerText = `${playerScore}`;
+  cpuScore.innerText = `${computerScore}`;
+});
+
+function fiveRounds() {
+  if (playerScore == 5) {
+    winMessage.innerText = "You Win!";
+    gameOver = true;
+  }
+
+  if (computerScore == 5) {
+    winMessage.innerText = "Computer Wins!";
+    gameOver = true;
   }
 }
 
